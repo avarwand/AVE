@@ -1,4 +1,4 @@
-# AVE — Avarwand Video Editor
+# AVE (Avarwand Video Editor)
 
 A lightweight, modern **desktop video-editing companion** for Windows,
 powered by FFmpeg.  AVE provides a clean, dark-themed graphical interface
@@ -247,12 +247,15 @@ By using AVE you agree to:
 ## Contact & Support
 
 **Avarwand**
+
 📧 Email: [avarwand@yahoo.com](mailto:avarwand@yahoo.com)
+
 🐙 GitHub: [github.com/avarwand](https://github.com/avarwand)
 
 ---
 
 **Developed by Avarwand**
+
 **Initial Release: 2026**
 
 ---
