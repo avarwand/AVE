@@ -6,7 +6,7 @@
 #define MyAppIcon "D:\Payam Avarwand\My Repos\GitHub\Word-Books\Code\Avarwand Software Production\27- AVE\Visual\AVE Logo.ico"
 #define MyVbsLauncher "AVE_Launcher.vbs"
 #define MyAppIconName "AVE Logo.ico"
-#define MyAppFileVersion "1.3.1.46"
+#define MyAppFileVersion "1.3.5.19"
 
 [Setup]
 AppId={{AVE.com.yahoo@Avar_Payam}
@@ -110,3 +110,6 @@ begin
     end;
   end;
 end;
+
+
+
