@@ -1,263 +1,160 @@
-# AVE (Avarwand Video Editor)
+# Avarwand Video Editor (AVE)
+A **powerful, modern GUI tool** for **everyday video and audio processing**: cut, subtitle, rotate, speed-change, amplify, watermark, compress, and convert your media, with precision, speed, and safety.
 
-A lightweight, modern **desktop video-editing companion** for Windows,
-powered by FFmpeg.  AVE provides a clean, dark-themed graphical interface
-for the most common video and audio editing tasks — no command-line knowledge
-required.
+No timeline complexity . No cloud uploads . Full control
+
+---
+
+## What's New in v1.5.2
+- **Multi-Feature Render**: Combine watermark + subtitle + rotate/flip + speed change, with **optional compression to an exact target size**, and export everything in **one single render**
+- **Template systems everywhere**: Save, load, update, rename, and delete your subtitle stylings, watermark designs (image embedded!), and conversion settings
+- **Searchable Info window**: Type a word and jump match-by-match through the built-in documentation, only the searched word is marked
+- **Full safety lock**: While a render runs, the whole window is locked and only STOP stays active; stopping also **removes the unfinished output file automatically**
+- **Reset buttons** on every page and every Multi-Feature section
 
 ---
 
 ## Main Features
-
-### 🔤 Hardcode Subtitle (Burn-in)
-- **Multi-format support**: SRT, SBV (YouTube), VTT (WebVTT), SUB
-  (MicroDVD & SubViewer), ASS, SSA.
-- **Full typography control**: font family chosen from every font installed
-  on your system via a searchable dropdown, font size, and style
-  (Regular / Bold / Italic / Bold + Italic).
-- **Border settings**: adjustable width and colour.
-- **Position**: Bottom, Center, or Top, with an edge-distance (margin)
-  control for Bottom and Top modes.
-- **Output quality**: Match Source Bitrate, Lossless (CRF 0), or
-  CRF 14 / 16 / 18 / 22 / 28.
-- **Live preview panel**: updates automatically on every setting change;
-  manual Refresh button; preview background can be toggled between dark,
-  black, and white.
-- **Auto-named output**: output path is pre-filled as
-  `<source> _ subtitle hardcoded.mp4` in the same folder.
-- **No overwrite**: if the output file already exists a counter suffix
-  is added automatically (e.g. `… _ subtitle hardcoded - (1).mp4`).
+- **Hardcode Subtitle**: Burn SRT / SUB / ASS / SSA / SBV / VTT subtitles permanently into video, with full font, size, color, border, and position control, live preview, and styling templates
+- **Cut Video**: Trim and join segments on a visual timeline, lossless single-range cutting
+- **Extract Audio / Audio Converter**: Export or convert audio to MP3, WAV, AAC, or FLAC with bitrate, sample-rate, and trim control
+- **Speed Change**: 0.25× to 4×, with optional original-pitch preservation
+- **Rotate / Flip Video**: 90° / 180° / 270° / 360° plus horizontal and vertical flips, including an instant, 100 % lossless metadata-only mode
+- **Audio Amplifier**: Turn the volume up or down with a built-in limiter (never distorts), optional noise reduction and filters, live waveform
+- **Video Compression**: Compress to an **exact target file size**, down to 1 MB precision, using two-pass encoding
+- **Add Watermark**: Overlay an image (PNG with transparency recommended) with exact size, 9-grid position, edge margin, and opacity, plus preview and templates
+- **Video Converter**: Convert between MP4 (H.264 / H.265 / AV1), MKV, MOV, TS, AVI, and WebM (VP9) with a precise per-format quality slider
+- **Multi-Feature Render**: All of the above combined in one pass
+- **10-second Preview** buttons before committing to long renders
+- **Dark-mode GUI** with clean layout, fully responsive on any monitor size
+- **Fully GUI-based**: no command-line knowledge required
 
 ---
 
-### ✂️ Cut Video
-- **Visual timeline**: a canvas shows the full video duration.
-  Left-click sets a Start time; right-click sets an End time.
-- **Multiple ranges**: add as many time ranges as needed using the
-  dedicated form.
-- **Include mode** *(default)*: the output contains only the listed ranges.
-- **Exclude mode**: the output contains everything *except* the listed
-  ranges — ideal for removing segments from an otherwise good recording.
-- **Automatic overlap merging**: if two ranges overlap, the shared portion
-  is counted only once; FFmpeg is never given conflicting instructions.
-- **Quality**: Stream Copy (lossless, instant) for a single range;
-  selectable CRF for multi-range re-encode.
-- **Total duration label**: the total output length is shown in real time
-  as ranges are added or removed.
-- **Auto-named output**: pre-filled as `<source>_cutted.mp4` with an
-  automatic counter suffix if the file already exists.
-- **Preview**: generates a 30-second preview of the first active range
-  and opens it in your system media player.
+## Multi-Feature Render
+
+Apply several operations to the same video and render **once**:
+
+- Enable any combination: **Watermark**, **Hardcode Subtitle**, **Rotate / Flip**, **Speed Change**
+- Optional **Video Compression** to an exact target size, or leave it off (or the slider at maximum) to keep the source quality untouched
+- Loads the **same templates** you saved on the individual feature pages
+- Smart processing order: subtitles stay in sync with speed changes, and the watermark position always refers to the final orientation
+- One progress bar, one output file, no intermediate re-encoding losses
 
 ---
 
-### 🔊 Extract Audio
-- **Formats**: MP3, WAV, AAC, FLAC.
-- **Original quality**: when the source codec matches the target format
-  AVE uses stream copy (zero re-encoding loss); otherwise it applies
-  the highest-quality encode for that codec (VBR V0 for MP3, PCM for
-  WAV, matching bitrate for AAC, lossless for FLAC).
-- **Trim**: an optional trim card lets you define a Start and End time
-  to extract only a portion of the audio.  The End field is
-  auto-populated with the source file's duration.
-- **Auto-named output**: the output path is pre-filled in the same folder
-  as the source.  If the input is an audio file the suffix `_trimmed`
-  is appended.
-- **No overwrite** protection on all outputs.
+## Templates & Data Folder
+
+Design once, reuse forever:
+
+- **Subtitle styling templates**: font, size, colors, border, position, quality
+- **Watermark templates**: the watermark **image itself is embedded** in the template, so it keeps working even if the original image file is gone
+- **Conversion templates**: format, quality, and encoding preset
+- Every template can be **saved, updated, renamed, and deleted** from inside the tool
+- All templates live in a single data folder (by default under your user profile), shown as a **clickable link** in the Info window, you can **change this folder** at any time and take your templates with you by simply copying it
 
 ---
 
-### ⚡ Speed Change
-- **Speed range**: 0.25× to 4.0×.
-- **Quick presets**: 0.25×, 0.5×, 0.75×, 1×, 1.25×, 1.5×, 2×, 4×
-  buttons for instant selection, plus a continuous slider and a custom
-  entry field.
-- **Pitch control**:
-  - *Keep original pitch* (default) — uses chained `atempo` filters;
-    voices stay natural at any speed.
-  - *Natural pitch shift* — uses `asetrate`/`aresample` for the classic
-    chipmunk (fast) or slow-motion voice (slow) effect.
-- **Live duration estimate**: shows estimated output length in real time
-  as you adjust the speed.
-- **Output quality**: CRF 14 to CRF 28.
-- **Preview**: renders a 10-second preview and opens it in your system
-  media player.
-- **Auto-named output**: pre-filled as `<source>_speed.mp4`.
+## Supported Formats
 
----
-
-### 🔄 Rotate / Flip Video
-- **Rotation**: a 4-position slider (90° / 180° / 270° / 360°).
-  A golden label updates in real time to show the selected angle.
-- **Flip**: Flip Horizontal and Flip Vertical checkboxes (combinable
-  with any rotation).
-- **Quality**:
-  - *Lossless — Metadata Tag Only* (default, fastest): writes a rotation
-    tag without re-encoding a single pixel.  Works with VLC, QuickTime,
-    and most modern players.
-  - *Match Source Bitrate* or CRF 14–28 for actual pixel rotation
-    (required when flipping, or for players that ignore tags).
-- **Preview**: generates a 10-second rotated preview and opens it in
-  your system media player.
-- **Auto-named output**: pre-filled as `<source>_rotated.mp4`.
-
----
-
-### 🔈 Audio Amplifier
-- **Volume**: slider from 0.1× to 15×, with quick preset buttons
-  (0.5×, 1×, 2×, 5×, 8×, 15×) and a live golden readout.
-- **Noise reduction**: Off / Light / Medium / Strong, powered by
-  FFmpeg's adaptive `afftdn` FFT-based denoiser — no noise sample needed.
-- **High-pass filter**: removes low-frequency hum and rumble below 80 Hz.
-- **Low-pass filter**: reduces high-frequency hiss above 12 kHz.
-- **Waveform display**: the audio waveform of the source file is rendered
-  by FFmpeg and displayed in the panel automatically on file load.
-- **Preview**: processes a 10-second clip with the active settings and
-  opens it in your system media player.
-- **Processing**: video stream is stream-copied unchanged; only the audio
-  is re-encoded with the selected filters applied.
-- **Auto-named output**: pre-filled as `<source>_amplified.mp4`.
-
----
-
-## Common Behaviour Across All Features
-
-| Behaviour | Detail |
-|---|---|
-| **No overwrite** | Before writing, AVE checks whether the output file exists.  If it does, a counter suffix is added automatically: `… - (1)`, `… - (2)`, etc. |
-| **Drag & drop** | All file-input fields support drag-and-drop (requires `tkinterdnd2`). |
-| **Clear buttons** | Every input field has a ✕ clear button. |
-| **Stop button** | Every processing page has a ■ Stop button that is enabled only while a job is running. |
-| **Progress bar** | All operations report live percentage progress. |
-| **Preview** | Speed Change, Cut Video, Rotate, and Audio Amplifier all include a 👁 Preview button that renders a short clip and opens it in the default system media player. |
+- **Video input**: MP4, MKV, AVI, MOV, WebM, M4V, TS, M2TS, MTS, FLV, WMV, MPEG, MPG, 3GP
+- **Video output**: MP4 (H.264 / H.265 / AV1), MKV, MOV, TS, AVI (H.264 or classic MPEG-4), WebM (VP9)
+- **Subtitles**: SRT, SUB, ASS, SSA, SBV (YouTube), VTT (WebVTT)
+- **Audio output**: MP3, WAV, AAC, FLAC
 
 ---
 
 ## System Requirements
-
-- **Operating System**: Windows 10 or later (recommended).
-- **FFmpeg**: required for all video/audio operations.
-  AVE can download and install FFmpeg automatically on Windows
-  (see *FFmpeg Installation* below).
-
----
-
-## FFmpeg Installation
-
-FFmpeg is a **required** dependency for all processing features.
-
-### Windows — Automatic (recommended)
-1. Launch AVE.  If FFmpeg is not found, the main menu shows a
-   **⬇ Install FFmpeg** button.
-2. Click it.  AVE downloads `ffmpeg-release-essentials.zip` (~80 MB)
-   from [gyan.dev](https://www.gyan.dev/ffmpeg/builds/),
-   extracts `ffmpeg.exe` and `ffprobe.exe` to `C:\ffmpeg\bin\`,
-   and updates your user-level PATH — no administrator rights required.
-3. The install takes effect immediately in the same AVE session.
-
-### Windows — Manual
-1. Visit <https://www.gyan.dev/ffmpeg/builds/>
-2. Download `ffmpeg-release-essentials.zip`.
-3. Extract `ffmpeg.exe` and `ffprobe.exe` to `C:\ffmpeg\bin\`.
-4. Add `C:\ffmpeg\bin` to your user or system PATH.
-5. Restart AVE.
+- **OS**: Windows 10 / Windows 11
+- **FFmpeg** (free, open source): required for all processing
+  - If FFmpeg is not found, AVE shows a built-in **one-click installer** that downloads an official build (~80 MB) and sets it up for you, no admin rights needed
+  - Alternatively, install FFmpeg manually and add it to your PATH
 
 ---
 
-## Usage
+## How to Use
 
-### 1. Launch AVE
-Double-click `AVE.exe`.  The main window opens
-centred on the screen.
+1. Download the desired Version
+2. Unzip it > Install it (_for the installer version_)
+3. Pick a **feature card** from the main menu
+4. **Drag & drop** (or browse) your video into the drop zone
+5. Adjust the **settings**, or load one of your saved **templates**
+6. Click **Preview** to check a 10-second sample
+7. Click **Start**
+8. Watch the progress → **Done!**
 
-### 2. Select a Feature
-Click any card on the main menu to open that feature's page.
-
-### 3. Load Files
-Use the **Browse…** button or drag and drop a file onto the input field.
-
-### 4. Configure Settings
-Adjust quality, timing, and style options as needed.
-
-### 5. Preview *(where available)*
-Click **👁 Preview** to render a short preview and inspect the result
-before committing to the full export.
-
-### 6. Export
-Click the primary action button (e.g. **▶ Start Rendering**,
-**▶ Cut Video**, **▶ Apply Speed**).  The progress bar tracks
-the operation.  The output file is saved to the path shown in the
-Output File field.
-
-### 7. Return to Menu
-Click **⌂ Home** (bottom-left of every feature page) to return to the
-main menu, or **✕ Exit** (bottom-right) to close the application.
+The **Info** window (main menu) contains the full built-in documentation, including simple explanations of CRF, encoding presets, and every quality mode, with a search bar to find anything instantly.
 
 ---
 
-## Common Issues
+## Safety Notes
 
-- ❌ **FFmpeg not found**: Use the **⬇ Install FFmpeg** button on the
-  main menu, or install FFmpeg manually and add it to PATH.
-- ⚠️ **Exit code error during multi-segment cut**: Ensure no two ranges
-  overlap — AVE merges overlaps automatically, but an unusual container
-  format may still fail with stream copy.  Switch the quality to a
-  CRF option (re-encode) to resolve.
-- 🔈 **No audio in output**: Some video files contain no audio stream.
-  AVE detects this automatically; video-only outputs are expected.
-- 🔤 **Subtitle not visible**: Confirm the subtitle file is encoded in
-  UTF-8 or Latin-1 and that the chosen font is installed on your system.
-- 🔄 **Rotation only works in metadata mode for some players**: Use a
-  CRF quality option for actual pixel rotation if your target player
-  does not honour rotation metadata.
+* Your **original files are never modified or overwritten**: every render writes to a new output file, and existing files are never replaced
+* While a render runs, the interface **locks completely**, only the **STOP** button stays active, so nothing can be changed mid-process by accident
+* Pressing **STOP** also **deletes the unfinished output file automatically**: no half-broken videos left behind
+* **Preview before you commit**: every heavy feature offers a 10-second preview
+* Media is processed **100 % locally**: nothing is ever uploaded
 
 ---
 
-## Technical Notes
+## Use Cases
 
-- All video and audio processing is performed by **FFmpeg**, which must
-  be available in the system PATH or at `C:\ffmpeg\bin\`.
-- Single-range cuts use **stream copy** (`-c copy`) for speed and zero
-  quality loss.  Multi-range cuts use `filter_complex` with `trim` /
-  `atempo` filters and require re-encoding.
-- Subtitle burning always re-encodes the video stream.  Choose
-  *Match Source Bitrate* or a high CRF value to minimise quality loss.
-- The waveform in the Audio Amplifier is generated by FFmpeg's
-  `showwavespic` filter and displayed natively by tkinter — no
-  additional image libraries are required.
-- Preview clips are written to the system temporary directory and
-  overwritten on each preview call.
+* Burning subtitles into videos for social media or presentations
+* **Compressing large recordings to an exact size** for email, messengers, or upload limits
+* Watermarking videos with your logo before publishing
+* Fixing sideways phone videos in seconds (lossless rotation)
+* Boosting quiet audio tracks without distortion
+* Converting between formats for maximum device compatibility
+* Speeding up lectures and tutorials, or creating slow-motion clips
+* Extracting music or speech from video files
+
+---
+
+## Contributing
+
+This project is released as **freeware**.
+
+While primarily maintained by the author, suggestions, bug reports, and improvement ideas are welcome via email.
+
+Pull requests are currently not accepted.
 
 ---
 
 ## License
 
-This software is released as **freeware** under the **Avarwand EULA**.
+**AVE is freeware**, released under a custom End User License Agreement (EULA) by **Avarwand**.
 
-By using AVE you agree to:
-- Use the software in compliance with the EULA.
-- Not reverse engineer, decompile, or modify the software.
-- Not redistribute or claim ownership of the software.
-- Accept the software "as is" without warranties.
+In short, you are free to:
 
-*For full license terms, see the `LICENSE.txt` file.*
+* **Use** AVE free of charge, for both personal and commercial purposes
+* **Share** AVE with anyone, redistributing, hosting, mirroring, and promoting it is welcome, as long as it is passed on **complete and unmodified**, **free of charge**, and with clear credit to **Avarwand**
 
----
+And you may not:
 
-## Contact & Support
+* Sell AVE, monetize access to it, or lock it behind paywalls, donations, surveys, registration walls, or paid bundles
+* Reverse engineer, decompile, or modify it (except to the limited extent permitted by applicable law)
+* Claim it as your own work, or remove its copyright and branding notices
 
-**Avarwand**
+AVE uses **FFmpeg**, a separate free and open-source project by the FFmpeg team, licensed under its own terms.
 
-📧 Email: [avarwand@yahoo.com](mailto:avarwand@yahoo.com)
+AVE is provided **"as is"**, without warranty of any kind.
 
-🐙 GitHub: [github.com/avarwand](https://github.com/avarwand)
-
----
-
-**Developed by Avarwand**
-
-**Initial Release: 2026**
+*This summary is for convenience only. The legally binding terms are in the [LICENSE](LICENSE.md) file included with every release and in this repository.*
 
 ---
 
-© 2026 Avarwand.  All rights reserved.
+**Developed by Avarwand**  
+**Latest Version: 1.5.2 (August 2026)**  
+**Initial Release: April 2026**
+
+---
+
+## Contact
+
+**Avarwand Support**  
+📧 [avarwand@yahoo.com](mailto:avarwand@yahoo.com)  
+🌐 [github.com/avarwand](https://github.com/avarwand/)
+
+© 2026 Avarwand. All rights reserved.
+
+---

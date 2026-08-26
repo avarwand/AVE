@@ -1,12 +1,13 @@
 #define MyAppName "AVE"
-#define MyAppVersion "1.3"
+#define MyAppVersion "1.5"
 #define MyAppPublisher "Avarwand"
 #define MyAppURL "https://github.com/avarwand/AVE/releases/tag/ave"
-#define MyAppExeName "AVE 1.3 Portable.exe"
-#define MyAppIcon "D:\Payam Avarwand\My Repos\GitHub\Word-Books\Code\Avarwand Software Production\27- AVE\Visual\AVE Logo.ico"
+#define MyAppExeName "AVE 1.5 Portable.exe"
+#define MyAppIcon "D:\Payam Avarwand\My Repos\GitHub\Word-Books\Code\Avarwand Software Production\27- AVE\Visual\AVE.ico"
 #define MyVbsLauncher "AVE_Launcher.vbs"
-#define MyAppIconName "AVE Logo.ico"
-#define MyAppFileVersion "1.3.5.19"
+#define MyAppIconName "AVE.ico"
+#define MyAppFileVersion "1.5.2.11"
+#define MyLicenseFile "D:\Payam Avarwand\My Repos\GitHub\Avarwand\Software\AVE\installer\LICENSE.txt"
 
 [Setup]
 AppId={{AVE.com.yahoo@Avar_Payam}
@@ -24,6 +25,7 @@ UninstallDisplayIcon={app}\lib\{#MyAppIconName}
 OutputDir="D:\Payam Avarwand\My Repos\GitHub\Avarwand\Software\AVE\installer"
 OutputBaseFilename={#MyAppName}-{#MyAppVersion}-Setup
 SetupIconFile={#MyAppIcon}
+LicenseFile={#MyLicenseFile}
 SolidCompression=yes
 WizardStyle=modern
 PrivilegesRequiredOverridesAllowed=dialog
@@ -39,11 +41,11 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "D:\Payam Avarwand\My Repos\GitHub\Avarwand\Software\AVE\installer\AVE 1.3 Portable\AVE 1.3 Portable.exe"; DestDir: "{app}\lib"; Flags: ignoreversion
+Source: "D:\Payam Avarwand\My Repos\GitHub\Avarwand\Software\AVE\installer\AVE 1.5 Portable\AVE 1.5 Portable.exe"; DestDir: "{app}\lib"; Flags: ignoreversion
 Source: "{#MyAppIcon}"; DestDir: "{app}\lib\_internal"; Flags: ignoreversion
 
 ; Install _internal under the lib folder
-Source: "D:\Payam Avarwand\My Repos\GitHub\Avarwand\Software\AVE\installer\AVE 1.3 Portable\_internal\*"; DestDir: "{app}\lib\_internal"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "D:\Payam Avarwand\My Repos\GitHub\Avarwand\Software\AVE\installer\AVE 1.5 Portable\_internal\*"; DestDir: "{app}\lib\_internal"; Flags: ignoreversion recursesubdirs createallsubdirs
 
 [Icons]
 ; VBS launcher
@@ -110,6 +112,3 @@ begin
     end;
   end;
 end;
-
-
-
