@@ -1,6 +1,6 @@
 # End User License Agreement (EULA)
 
-## AVE (Avarwand Video Editor)
+## AVE | Avarwand Video Editor
 
 
 This End User License Agreement (the "Agreement") is a legal agreement between you, either an individual or a legal entity ("You"), and **Avarwand** (independent software developer, the "Author") for the software product **"Avarwand Video Editor"** ("AVE" or the "Software"), including its executable files and any accompanying documentation.
